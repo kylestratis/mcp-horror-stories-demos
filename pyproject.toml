@@ -1,0 +1,9 @@
+[project]
+name = "mcp-horror-stories-demos"
+version = "0.1.0"
+description = "Toy MCP servers that reproduce tool poisoning, rug pulls, and the lethal trifecta for a live lesson"
+requires-python = ">=3.12"
+dependencies = [
+    # FastMCP lives at mcp.server.fastmcp in the 1.x SDK; 2.x renamed it MCPServer.
+    "mcp[cli]>=1.25,<2",
+]

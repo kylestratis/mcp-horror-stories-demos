@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "support_fixed": {
+      "command": "uv",
+      "args": ["run", "--quiet", "demo_b/support_server_fixed.py"]
+    }
+  }
+}

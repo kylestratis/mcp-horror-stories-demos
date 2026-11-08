@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "messages": {
+      "command": "uv",
+      "args": ["run", "--quiet", "demo_a/messages_server.py"]
+    },
+    "facts": {
+      "command": "uv",
+      "args": ["run", "--quiet", "demo_a/fact_server.py"]
+    }
+  }
+}
