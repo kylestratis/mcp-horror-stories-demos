@@ -12,6 +12,25 @@ set -euo pipefail
 cd "$(dirname "$0")"
 pause() { read -r -p $'\n[Enter] ' || true; clear || true; }
 
+REC=demo_a/recorded
+if [ ! -f "$REC/haiku_attack.jsonl" ] || [ ! -f "$REC/opus_caught.jsonl" ]; then
+  cat <<EOF
+This clip replays two saved transcripts that aren't in the repo:
+  $REC/haiku_attack.jsonl   a run where the attack worked
+  $REC/opus_caught.jsonl    a run where the model caught it
+
+To create them (needs Claude Code logged in, or ANTHROPIC_API_KEY set):
+  mkdir -p $REC
+  MODEL=haiku ./trials.sh 8     # prints which runs were ATTACK
+  cp runtime/trials/haiku_<n>.jsonl $REC/haiku_attack.jsonl
+  ./trials.sh 5
+  cp runtime/trials/default_<n>.jsonl $REC/opus_caught.jsonl
+
+Results vary run to run; a smaller model may need more trials to land a hit.
+EOF
+  exit 0
+fi
+
 clear
 uv run --quiet demo_a/show_rug_pull.py
 pause
