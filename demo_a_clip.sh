@@ -22,9 +22,9 @@ This clip replays two saved transcripts that aren't in the repo:
 To create them (needs Claude Code logged in, or ANTHROPIC_API_KEY set):
   mkdir -p $REC
   MODEL=haiku ./trials.sh 8     # prints which runs were ATTACK
-  cp runtime/trials/haiku_<n>.jsonl $REC/haiku_attack.jsonl
+  cp runtime/trials/haiku_a2_<n>.jsonl $REC/haiku_attack.jsonl
   ./trials.sh 5
-  cp runtime/trials/default_<n>.jsonl $REC/opus_caught.jsonl
+  cp runtime/trials/default_a2_<n>.jsonl $REC/opus_caught.jsonl
 
 Results vary run to run; a smaller model may need more trials to land a hit.
 EOF
