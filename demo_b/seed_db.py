@@ -41,7 +41,7 @@ def seed() -> None:
     db.executemany("INSERT INTO support_tickets (customer, subject, body) VALUES (?, ?, ?)", TICKETS)
     db.executemany("INSERT INTO integration_tokens (service, token) VALUES (?, ?)", TOKENS)
     db.commit()
-    print(f"Seeded {DB}")
+    print(f"Seeded {DB.relative_to(DB.parent.parent)}")
 
 
 if __name__ == "__main__":
