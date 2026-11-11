@@ -28,7 +28,8 @@ originals; they are not copies of them.
 Needs Python 3.12+, [uv](https://docs.astral.sh/uv/), and the Claude Code CLI (`claude`) for the live runs.
 
 ```bash
-cd ~/code/mcp-horror-stories-demos
+git clone <repo-url> mcp-horror-stories-demos
+cd mcp-horror-stories-demos
 uv sync          # installs the official MCP Python SDK, 1.x (FastMCP)
 ./reset.sh       # creates runtime/ and seeds runtime/support.db
 ```
